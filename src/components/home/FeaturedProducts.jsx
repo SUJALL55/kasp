@@ -3,60 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, MessageSquareQuote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-const categories = ['All Products', 'Service Vans', 'Light Towers', 'Power Storage'];
-
-const products = [
-  {
-    name: 'Hybrid Towers',
-    category: 'Light Towers',
-    image: 'https://media.base44.com/images/public/69c2b4faa43513949a2b9d58/65740e8ec_image.png',
-    description: '200W x 6 LEDs, 50,000h life, CPCB-II compliant.',
-    tags: ['Hybrid Power', '6h Backup'],
-  },
-  {
-    name: 'Solar Towers',
-    category: 'Light Towers',
-    image: 'https://media.base44.com/images/public/69c2b4faa43513949a2b9d58/c7c771079_image.png',
-    description: '100W x 4 LEDs, solar-powered, 10–11h battery backup.',
-    tags: ['Solar', 'Eco-Friendly'],
-  },
-  {
-    name: 'Power House Towers',
-    category: 'Light Towers',
-    image: 'https://i.ibb.co/84N3gNRF/Power-House-Towers.png',
-    description: '200W x 4 LEDs with 15KVA Cummins engine.',
-    tags: ['High Power', 'CPCB-IV+'],
-  },
-  {
-    name: 'Diesel Towers',
-    category: 'Light Towers',
-    image: 'https://media.base44.com/images/public/69c2b4faa43513949a2b9d58/e222e8437_image.png',
-    description: '200W x 4 LEDs with 5KVA Mahindra engine, CPCB-II.',
-    tags: ['Diesel', 'CPCB-II'],
-  },
-  {
-    name: 'BESS 3750VA',
-    category: 'Power Storage',
-    image: 'https://media.base44.com/images/public/69c2b4faa43513949a2b9d58/59ecfe920_image.png',
-    description: 'Portable industrial battery storage with 4x output ports and IP67 rugged design.',
-    tags: ['4x Industrial Ports', 'IP67 Rugged'],
-  },
-  {
-    name: 'Mobile Bowsers',
-    category: 'Service Vans',
-    image: 'https://media.base44.com/images/public/69c2b4faa43513949a2b9d58/e46c28d22_image.png',
-    description: 'High-capacity fuel dispensing unit with 2.4KL tank and integrated precision metering.',
-    tags: ['2.4KL Capacity', 'Fuel Dispensing'],
-  },
-  {
-    name: 'Service Vans',
-    category: 'Service Vans',
-    image: 'https://i.ibb.co/whDZW11z/service-van.png',
-    description: 'Mobile Maintenance & repair without travel to workshops.',
-    tags: ['Mobile Maintenance', 'Customizable'],
-  },
-];
+import { products, categories } from '@/data/products';
 
 const tagColors = [
   'bg-primary text-primary-foreground',
@@ -139,8 +86,6 @@ export default function FeaturedProducts() {
                       alt={product.name}
                       className={`w-full h-full object-contain transition-transform duration-500 mix-blend-multiply ${
                         expandedProduct === product.name ? 'scale-110 blur-[2px] opacity-20' : 'group-hover:scale-[1.05]'
-                      } ${
-                        product.name === 'Power House Towers' ? 'scale-[1.8] translate-x-[20%]' : ''
                       }`}
                       loading="lazy"
                     />

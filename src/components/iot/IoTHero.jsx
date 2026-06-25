@@ -1,17 +1,15 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Play } from 'lucide-react';
 import { motion } from 'framer-motion';
-
-const IOT_HERO = 'https://media.base44.com/images/public/69d1e8aaf5271d945522e9a8/b8c904d6e_generated_3b71796e.png';
+import { heroIotDashboard, iotLaunch1, iotLaunch2 } from '@/assets/images';
 
 export default function IoTHero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
-        <img src={IOT_HERO} alt="KASPIoT Smart Factory" className="w-full h-full object-cover" />
+        <img src={heroIotDashboard} alt="KASPIoT Smart Factory" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-br from-foreground/95 via-foreground/80 to-primary/60" />
       </div>
 
@@ -23,25 +21,25 @@ export default function IoTHero() {
         }} />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 w-full">
-        <div className="max-w-3xl">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 pt-32 pb-20 flex flex-col lg:flex-row items-center justify-between gap-10">
+        <div className="max-w-3xl w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <Badge className="bg-secondary/20 text-secondary border-secondary/30 px-4 py-2 text-sm font-medium mb-6 backdrop-blur-sm">
-              🚀 Introducing KASPIoT
+            <Badge variant="outline" className="bg-secondary/20 text-secondary border-secondary/30 px-4 py-2 text-sm font-medium mb-6 backdrop-blur-sm">
+              🚀 Introducing KASP IOT
             </Badge>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight">
-              The Future of
+            <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+              The intelligent eyes behind
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-accent to-secondary">
-                Industrial IoT
+                the world's most efficient industries
               </span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-white/70 max-w-2xl leading-relaxed">
-              KASPIoT brings intelligent monitoring, predictive analytics, and seamless connectivity to your industrial equipment — 
+              KASP IOT brings intelligent monitoring, predictive analytics, and seamless connectivity to your industrial equipment — 
               transforming raw data into actionable insights for maximum uptime and efficiency.
             </p>
 
@@ -83,6 +81,36 @@ export default function IoTHero() {
               ))}
             </div>
           </motion.div>
+        </div>
+        {/* Launch Images for IoT Solutions - Rectangular glassmorphism boxes */}
+        <div className="hidden lg:flex flex-row gap-6 items-end min-w-[360px] max-w-[480px] w-full pr-4">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex-1 flex items-center justify-center bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-2xl p-4 aspect-[3/2] hover:bg-white/20 transition-all duration-500 hover:scale-105" 
+            style={{maxWidth:'220px'}}
+          >
+            <img src={iotLaunch1} alt="IoT Launch 1" className="w-full h-full object-contain brightness-110 contrast-110" loading="lazy" decoding="async" />
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex-1 flex items-center justify-center bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-2xl p-4 aspect-[3/2] hover:bg-white/20 transition-all duration-500 hover:scale-105" 
+            style={{maxWidth:'220px'}}
+          >
+            <img src={iotLaunch2} alt="IoT Launch 2" className="w-full h-full object-contain brightness-110 contrast-110" loading="lazy" decoding="async" />
+          </motion.div>
+        </div>
+        {/* Mobile: Rectangular glassmorphism boxes */}
+        <div className="flex flex-row gap-4 w-full mt-12 lg:hidden justify-center px-4">
+          <div className="flex-1 flex items-center justify-center bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-xl p-2 aspect-[3/2]" style={{maxWidth:'140px'}}>
+            <img src={iotLaunch1} alt="IoT Launch 1" className="w-full h-full object-contain" loading="lazy" decoding="async" />
+          </div>
+          <div className="flex-1 flex items-center justify-center bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-xl p-2 aspect-[3/2]" style={{maxWidth:'140px'}}>
+            <img src={iotLaunch2} alt="IoT Launch 2" className="w-full h-full object-contain" loading="lazy" decoding="async" />
+          </div>
         </div>
       </div>
     </section>

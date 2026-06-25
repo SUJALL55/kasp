@@ -1,35 +1,49 @@
-import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
-
-const IOT_SENSOR = 'https://media.base44.com/images/public/69d1e8aaf5271d945522e9a8/01f37833b_generated_10937a6e.png';
-const IOT_DASHBOARD = 'https://media.base44.com/images/public/69d1e8aaf5271d945522e9a8/ef9c431e4_generated_e1db13bd.png';
-const IOT_REMOTE = 'https://media.base44.com/images/public/69d1e8aaf5271d945522e9a8/6fa3bdc8a_generated_53812489.png';
-const IOT_ENERGY = 'https://media.base44.com/images/public/69d1e8aaf5271d945522e9a8/d5728cb38_generated_92de5c66.png';
+import {
+  anprSystem,
+  energySustainabilityInsights,
+  fuelMonitoringSystem,
+  machineMonitoring,
+  remoteFleetManagement,
+  tailoredMonitoringSolution,
+} from '@/assets/images';
 
 const useCases = [
   {
-    title: 'Smart Equipment Monitoring',
-    desc: 'Attach KASPIoT sensors to your service vans and light towers to track real-time operational data — engine health, fuel consumption, GPS location, and runtime metrics all in one dashboard.',
-    image: IOT_SENSOR,
+    title: 'ANPR System',
+    desc: 'Advanced License Plate Recognition system for industrial facilities. Automate entry/exit, track vehicle movements, and enhance security with 99%+ recognition accuracy even in low-light conditions.',
+    image: anprSystem,
+    tag: 'Vision',
+  },
+  {
+    title: 'Fuel Monitoring System',
+    desc: 'High-precision fuel monitoring for industrial tanks and equipment. Real-time consumption tracking, theft detection alerts, and detailed refueling reports to optimize your fuel economy.',
+    image: fuelMonitoringSystem,
     tag: 'Monitoring',
   },
   {
-    title: 'Predictive Maintenance Dashboard',
-    desc: 'Our AI-powered analytics platform analyzes historical data patterns to predict equipment failures up to 2 weeks in advance, enabling proactive maintenance scheduling and zero unplanned downtime.',
-    image: IOT_DASHBOARD,
-    tag: 'Analytics',
+    title: 'Machine Monitoring',
+    desc: 'Comprehensive industrial machine monitoring system. Track performance, health, and operational status of your heavy machinery in real-time to prevent breakdown and optimize output.',
+    image: machineMonitoring,
+    tag: 'Industry 4.0',
+  },
+  {
+    title: 'Tailored IoT Solution',
+    desc: 'Custom-built industrial IoT solutions designed specifically for your unique operational requirements. From specialized sensors to bespoke analytics dashboards, we tailor the technology to your business.',
+    image: tailoredMonitoringSolution,
+    tag: 'Customized',
   },
   {
     title: 'Remote Fleet Management',
-    desc: 'Manage your entire fleet of service vans and illumination towers from anywhere in the world. Start/stop equipment remotely, track asset locations, and receive instant alerts for any anomalies.',
-    image: IOT_REMOTE,
+    desc: 'Manage your entire fleet of service vans and illumination tower from anywhere in the world. Start/stop equipment remotely, track asset locations, and receive instant alerts for any anomalies.',
+    image: remoteFleetManagement,
     tag: 'Management',
   },
   {
     title: 'Energy & Sustainability Insights',
     desc: 'Track and optimize energy consumption across your fleet. Monitor solar panel efficiency, battery health, fuel usage patterns, and carbon footprint with detailed sustainability reports.',
-    image: IOT_ENERGY,
+    image: energySustainabilityInsights,
     tag: 'Sustainability',
   },
 ];
@@ -39,11 +53,11 @@ export default function IoTUseCases() {
     <section className="py-24 bg-muted/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Badge className="bg-primary/10 text-primary border-none px-4 py-1.5 text-sm font-medium mb-4">
+          <Badge variant="default" className="bg-primary/10 text-primary border-none px-4 py-1.5 text-sm font-medium mb-4">
             Use Cases
           </Badge>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground">
-            How KASPIoT Transforms Operations
+            How KASP IOT Transforms Operations
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
             Real-world applications of our IoT platform across industrial operations.
@@ -69,12 +83,14 @@ export default function IoTUseCases() {
                     src={uc.image}
                     alt={uc.title}
                     className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>
 
               <div className={`min-w-0 text-left ${i % 2 !== 0 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                <Badge className="bg-accent/10 text-accent border-none mb-3">{uc.tag}</Badge>
+                <Badge variant="default" className="bg-accent/10 text-accent border-none mb-3">{uc.tag}</Badge>
                 <h3 className="font-heading text-2xl sm:text-3xl font-bold text-foreground">{uc.title}</h3>
                 <p className="mt-4 text-muted-foreground leading-relaxed text-lg">{uc.desc}</p>
               </div>

@@ -18,7 +18,7 @@ export default function IoTBenefits() {
             Measurable Impact
           </h2>
           <p className="mt-4 text-background/60 max-w-xl mx-auto">
-            KASPIoT delivers tangible results that directly impact your bottom line.
+            KASP IOT delivers tangible results that directly impact your bottom line.
           </p>
         </div>
 

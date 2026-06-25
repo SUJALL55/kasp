@@ -4,8 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Cpu, Wifi, BarChart3, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
-
-const IOT_IMAGE = 'https://media.base44.com/images/public/69d1e8aaf5271d945522e9a8/b8c904d6e_generated_3b71796e.png';
+import { machineMonitoring } from '@/assets/images';
 
 const highlights = [
   { icon: Cpu, label: 'Smart Sensors', desc: 'Real-time equipment monitoring' },
@@ -27,7 +26,7 @@ export default function IoTPreview() {
               transition={{ duration: 0.6 }}
             >
               <Badge className="bg-secondary/20 text-secondary border-none mb-4 text-sm px-4 py-1.5">
-                NEW — KASPIoT Solutions
+                NEW — KASP IOT Solutions
               </Badge>
               <h2 className="font-heading text-3xl sm:text-4xl font-bold text-background">
                 Smart Industrial{' '}
@@ -78,9 +77,11 @@ export default function IoTPreview() {
             <div className="absolute -inset-4 bg-gradient-to-br from-secondary/30 via-accent/20 to-primary/30 rounded-3xl blur-2xl" />
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-secondary/10">
               <img
-                src={IOT_IMAGE}
+                src={machineMonitoring}
                 alt="KASPIoT Smart Factory Dashboard"
                 className="w-full aspect-video object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </motion.div>

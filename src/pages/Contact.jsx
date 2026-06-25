@@ -17,28 +17,45 @@ const reasons = [
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
     const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const company = formData.get('company');
-    const message = formData.get('message');
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      company: formData.get('company'),
+      message: formData.get('message'),
+    };
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      
-      const subject = encodeURIComponent(`Inquiry from ${name} (${company || 'No Company'})`);
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCompany: ${company || 'N/A'}\n\nMessage:\n${message}`);
-      
+    try {
+      // Using Formspree for direct background email submission
+      // Note: You will need to create a free account at formspree.io and replace 'YOUR_ID'
+      const response = await fetch('https://formspree.io/f/YOUR_ID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        toast.success('Message sent successfully! Our sales team will get back to you shortly.');
+        e.target.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      // Fallback to mailto if background submission fails or is not set up
+      const subject = encodeURIComponent(`Inquiry from ${data.name} (${data.company || 'No Company'})`);
+      const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\nCompany: ${data.company || 'N/A'}\n\nMessage:\n${data.message}`);
       window.location.href = `mailto:Sales@kasp.co.in?subject=${subject}&body=${body}`;
-      
-      toast.success('Message drafted! Please send the email to complete your inquiry.');
-      e.target.reset();
-    }, 1000);
+      toast.info('Opening your email client to send the message...');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -72,9 +89,9 @@ export default function Contact() {
                   <div>
                     <h3 className="font-heading font-semibold text-lg text-foreground">Office Address</h3>
                     <p className="text-muted-foreground mt-1">
-                      Office no 818, Eros Corporate Tower,
+                      393, Phase III, Udyog Vihar,
                       <br />
-                      Sector-2, IMT Manesar
+                      Sector 19, Gurugram, Haryana 122016
                     </p>
                   </div>
                 </div>

@@ -36,6 +36,7 @@ export default function PrivacyPolicy() {
               <li>Contact preferences</li>
               <li>Messages and inquiries you send to us</li>
               <li>Information about your equipment and service requirements</li>
+              <li>Office address: 393, Phase III, Udyog Vihar, Sector 19, Gurugram, Haryana 122016</li>
             </ul>
           </section>
 
@@ -96,7 +97,7 @@ export default function PrivacyPolicy() {
             <div className="mt-4 p-4 bg-muted rounded-xl">
               <p className="text-foreground font-medium">KASP Solutions</p>
               <p className="text-muted-foreground">Email: Sales@kasp.co.in</p>
-              <p className="text-muted-foreground">Address: Office no 818, Eros Corporate Tower, Sector-2, IMT Manesar</p>
+              <p className="text-muted-foreground">Address: 393, Phase III, Udyog Vihar, Sector 19, Gurugram, Haryana 122016</p>
             </div>
           </section>
         </div>

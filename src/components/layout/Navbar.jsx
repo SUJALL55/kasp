@@ -16,6 +16,8 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
+  const isDarkHeroPage = location.pathname === '/' || location.pathname === '/iot-solutions';
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
@@ -27,7 +29,7 @@ export default function Navbar() {
   }, [location]);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
       scrolled ? 'bg-card/90 backdrop-blur-xl shadow-lg shadow-primary/5' : 'bg-transparent'
     }`}>
       <div className="w-full px-4 sm:px-6 lg:px-10">
@@ -40,7 +42,7 @@ export default function Navbar() {
             <img 
               src="/images/logo.png" 
               alt="KASP Logo" 
-              className="h-12 w-auto transition-transform group-hover:scale-105 mix-blend-multiply" 
+              className={`h-12 w-auto transition-transform group-hover:scale-105 ${(!scrolled && isDarkHeroPage) ? 'brightness-0 invert' : ''}`} 
             />
           </Link>
 
@@ -53,7 +55,11 @@ export default function Navbar() {
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                   location.pathname === link.path
                     ? 'text-primary bg-primary/10'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                    : scrolled 
+                      ? 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                      : isDarkHeroPage
+                        ? 'text-white/80 hover:text-white hover:bg-white/10'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                 }`}
               >
                 {link.label}
@@ -75,7 +81,13 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+            className={`md:hidden p-2 rounded-lg transition-colors ${
+              scrolled 
+                ? 'hover:bg-muted text-foreground' 
+                : isDarkHeroPage
+                  ? 'hover:bg-white/10 text-white'
+                  : 'hover:bg-muted text-foreground'
+            }`}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>

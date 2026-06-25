@@ -4,29 +4,45 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import {
+  anprSystem,
+  energySustainabilityInsights,
+  fuelMonitoringSystem,
+  machineMonitoring,
+  remoteFleetManagement,
+  tailoredMonitoringSolution,
+} from '@/assets/images';
 
 const slides = [
   {
-    tag: 'Real-Time Monitoring',
-    title: 'Smart Equipment Monitoring',
-    desc: 'KASPIoT sensors track fuel levels, temperature, runtime, and vibration — all displayed on one live dashboard.',
-    image: 'https://media.base44.com/images/public/69d1e8aaf5271d945522e9a8/b8c904d6e_generated_3b71796e.png',
+    tag: 'Vision',
+    title: 'ANPR System',
+    desc: 'Automated License Plate Recognition system for industrial facilities. Automate entry/exit, track vehicle movements, and enhance security with 99%+ accuracy.',
+    image: anprSystem,
     accent: 'from-primary/80 to-accent/60',
     badge: 'bg-primary/20 text-primary',
   },
   {
-    tag: 'Predictive Analytics',
-    title: 'Prevent Failures Before They Happen',
-    desc: 'AI-powered analytics predicts equipment faults up to 2 weeks in advance, slashing maintenance costs by 50%.',
-    image: 'https://media.base44.com/images/public/69d1e8aaf5271d945522e9a8/ef9c431e4_generated_e1db13bd.png',
+    tag: 'Monitoring',
+    title: 'Fuel Monitoring System',
+    desc: 'High-precision fuel monitoring for industrial tanks and equipment. Real-time consumption tracking, theft detection alerts, and detailed refueling reports.',
+    image: fuelMonitoringSystem,
     accent: 'from-secondary/80 to-primary/60',
     badge: 'bg-secondary/20 text-secondary',
+  },
+  {
+    tag: 'Industry 4.0',
+    title: 'Machine Monitoring',
+    desc: 'Comprehensive industrial machine monitoring system. Track performance, health, and operational status of your heavy machinery in real-time.',
+    image: machineMonitoring,
+    accent: 'from-accent/80 to-primary/60',
+    badge: 'bg-accent/20 text-accent',
   },
   {
     tag: 'Remote Fleet Management',
     title: 'Control Your Fleet From Anywhere',
     desc: 'Remotely manage every service van and illumination tower — start/stop, GPS tracking, and instant alerts.',
-    image: 'https://media.base44.com/images/public/69d1e8aaf5271d945522e9a8/6fa3bdc8a_generated_53812489.png',
+    image: remoteFleetManagement,
     accent: 'from-accent/80 to-secondary/60',
     badge: 'bg-accent/20 text-accent',
   },
@@ -34,9 +50,17 @@ const slides = [
     tag: 'Energy Management',
     title: 'Smart Energy Optimization',
     desc: 'Monitor solar efficiency, battery health, and fuel usage in real time. Cut your carbon footprint by up to 40%.',
-    image: 'https://media.base44.com/images/public/69d1e8aaf5271d945522e9a8/d5728cb38_generated_92de5c66.png',
+    image: energySustainabilityInsights,
     accent: 'from-primary/70 to-secondary/70',
     badge: 'bg-primary/20 text-primary',
+  },
+  {
+    tag: 'Custom Solution',
+    title: 'Tailored IoT Solution',
+    desc: 'Custom-built industrial IoT solutions designed specifically for your unique operational requirements. We tailor the technology to your business.',
+    image: tailoredMonitoringSolution,
+    accent: 'from-accent/70 to-primary/70',
+    badge: 'bg-accent/20 text-accent',
   },
 ];
 
@@ -67,14 +91,14 @@ export default function IoTSolutionsSlider() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <div className="text-center mb-12">
-          <Badge className="bg-secondary/20 text-secondary border-none px-4 py-1.5 text-sm font-medium mb-4">
-            🚀 KASPIoT Solutions
+          <Badge variant="default" className="bg-secondary/20 text-secondary border-none px-4 py-1.5 text-sm font-medium mb-4">
+            🚀 KASP IOT Solutions
           </Badge>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-background">
             Hot IoT Solutions
           </h2>
           <p className="mt-3 text-background/50 max-w-xl mx-auto">
-            Discover how KASPIoT is revolutionizing industrial operations with connected intelligence.
+            Discover how KASP IOT is revolutionizing industrial operations with connected intelligence.
           </p>
         </div>
 

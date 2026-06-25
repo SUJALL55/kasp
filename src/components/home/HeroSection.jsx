@@ -1,21 +1,22 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ChevronRight, Zap, ChevronLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { heroIndustrialSolutions, heroIotDashboard } from '@/assets/images';
 
 const slides = [
   {
-    image: 'https://media.base44.com/images/public/69d1e8aaf5271d945522e9a8/9101bd402_generated_113bbcc1.png',
+    image: heroIndustrialSolutions,
     tag: 'Industrial Solutions',
     title: 'Industrial Solutions That Move Forward',
-    desc: 'Professional mobile maintenance service vans and illumination towers designed for the demands of modern industrial operations.',
+    desc: 'Professional mobile maintenance service vans and illumination tower designed for the demands of modern industrial operations.',
   },
   {
-    image: 'https://media.base44.com/images/public/69d1e8aaf5271d945522e9a8/b8c904d6e_generated_3b71796e.png',
-    tag: 'KASPIoT — Smart Monitoring',
+    image: heroIotDashboard,
+    tag: 'KASP IOT — Smart Monitoring',
     title: 'Real-Time Equipment Intelligence',
-    desc: 'KASPIoT sensors track fuel, temperature, runtime, and vibration — all in one live dashboard.',
+    desc: 'KASP IOT sensors track fuel, temperature, runtime, and vibration — all in one live dashboard.',
   },
 ];
 
